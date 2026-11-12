@@ -9,10 +9,10 @@ def initiate_chat(query: chat_payload):
     return query
 
 @ai_agent_router.get("/history")
-def get_history(sessionn_id : str):
-    print("sessionn id has been recieved")
+def get_history(session_id: str):
+    print("Session Id has been recieved")
 
-    #todo
-    #define service/login
+    # Todo
+    # define service/ login
 
-    return f"Here is the chat for {sessionn_id} session"
+    return f"Here is the chat for {session_id} Session Id"
