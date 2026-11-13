@@ -18,12 +18,8 @@ app.include_router(
 
 @app.get("/",status_code=200)
 async def root():
-<<<<<<< HEAD
-    return {"message": "Hello World"}
-=======
     return {
         "message":  "Your at the Xander's Backend"
     }
 
    
->>>>>>> fd96dbd0b84e69ed02a7bd817072e7414bcc5eb6
