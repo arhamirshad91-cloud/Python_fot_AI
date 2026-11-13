@@ -11,8 +11,22 @@ order ID with validate_order_id, then call log_complaint only for a valid order.
 Never invent facts. Ask for missing details.
 """
 
+<<<<<<< HEAD
 def create_chat_model(llm = "grok"):
     return ChatOpenAI(**LLMS(llm),temperature = 0)
+=======
+# ponytail: both speak the OpenAI API, so one ChatOpenAI class covers both
+LLMS = {
+    "ollama": dict(
+        base_url="http://localhost:11434/v1",
+        api_key="ollama",
+        model=os.getenv("OLLAMA_MODEL", "qwen3:4b")),
+    "groq": dict(
+        base_url="https://api.groq.com/openai/v1",
+        api_key=os.getenv("GROQ_API_KEY"),
+        model=os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")),
+}
+>>>>>>> abaa7243273c35b697b3214dee11c6082fb24e49
 
 def assistant(state: MessageState,model_with_tools):
     reply = model_with_tools.invoke(
